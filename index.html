@@ -556,14 +556,14 @@ function initBubbles(canvas, fillColor) {
 
   // Mouse interaction
   const mouse = Mouse.create(render.canvas)
-  const bodyZoom = parseFloat(getComputedStyle(document.body).zoom) || 1; mouse.pixelRatio = dpr * bodyZoom
+  mouse.pixelRatio = dpr
   Composite.add(engine.world, MouseConstraint.create(engine, { mouse, constraint: { stiffness: 0.2 } }))
   render.mouse = mouse
 
   let mP = { x: -9999, y: -9999 }, mI = false
   render.canvas.addEventListener('mousemove', e => {
     const r = render.canvas.getBoundingClientRect()
-    const z = parseFloat(getComputedStyle(document.body).zoom) || 1; mP = { x: (e.clientX - r.left) / z, y: (e.clientY - r.top) / z }
+    const z = parseFloat(getComputedStyle(document.body).zoom) || 1; mouse.pixelRatio = dpr * z; mP = { x: (e.clientX - r.left) / z, y: (e.clientY - r.top) / z }
     mI = true
   })
   render.canvas.addEventListener('mouseleave', () => { mI = false })
