@@ -212,8 +212,8 @@ nav { position: fixed; top: 0; left: 0; width: 100%; display: flex; align-items:
   text-decoration: none;
   transition: opacity 0.25s ease;
 }
-@media (min-width: 1280px) { html { zoom: 1.1; } }
-  @media (min-width: 1600px) { html { zoom: 1.25; } }
+@media (min-width: 1280px) { :root { zoom: 1.1; } }
+  @media (min-width: 1600px) { :root { zoom: 1.25; } }
 .page-footer-right a:hover { opacity: 0.4; }
 </style>
 </head>
@@ -561,8 +561,7 @@ function initBubbles(canvas, fillColor) {
   let mP = { x: -9999, y: -9999 }, mI = false
   render.canvas.addEventListener('mousemove', e => {
     const r = render.canvas.getBoundingClientRect()
-        const z = parseFloat(getComputedStyle(document.documentElement).zoom) || 1
-        mP = { x: (e.clientX - r.left) / z, y: (e.clientY - r.top) / z }
+            mP = { x: e.clientX - r.left, y: e.clientY - r.top }
     mI = true
   })
   render.canvas.addEventListener('mouseleave', () => { mI = false })
