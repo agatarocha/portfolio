@@ -8,7 +8,6 @@
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 @font-face { font-family: 'FaktProBlack'; src: url('https://cdn.jsdelivr.net/gh/agatarocha/fakt/FaktPro-Black.otf') format('opentype'); }
 @font-face { font-family: 'FaktProNormal'; src: url('https://cdn.jsdelivr.net/gh/agatarocha/fakt/FaktPro-Normal.otf') format('opentype'); }
-
 html { background: #1F1F1F; }
 @keyframes fadeIn {
   from { opacity: 0; }
@@ -213,6 +212,9 @@ nav { position: fixed; top: 0; left: 0; width: 100%; display: flex; align-items:
   text-decoration: none;
   transition: opacity 0.25s ease;
 }
+  @media (min-width: 1600px) { body { zoom: 0.9; } }
+  @media (min-width: 2000px) { body { zoom: 0.8; } }
+  @media (min-width: 2400px) { body { zoom: 0.72; } }
 .page-footer-right a:hover { opacity: 0.4; }
 </style>
 </head>
