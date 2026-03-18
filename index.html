@@ -8,6 +8,7 @@
 *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 @font-face { font-family: 'FaktProBlack'; src: url('https://cdn.jsdelivr.net/gh/agatarocha/fakt/FaktPro-Black.otf') format('opentype'); }
 @font-face { font-family: 'FaktProNormal'; src: url('https://cdn.jsdelivr.net/gh/agatarocha/fakt/FaktPro-Normal.otf') format('opentype'); }
+
 html { background: #1F1F1F; }
 @keyframes fadeIn {
   from { opacity: 0; }
@@ -558,8 +559,9 @@ function initBubbles(canvas, fillColor) {
 
   let mP = { x: -9999, y: -9999 }, mI = false
   render.canvas.addEventListener('mousemove', e => {
-            const r = render.canvas.getBoundingClientRect()
-        mP = { x: e.clientX - r.left, y: e.clientY - r.top }
+    const r = render.canvas.getBoundingClientRect()
+    mP = { x: e.clientX - r.left, y: e.clientY - r.top }
+    mI = true
   })
   render.canvas.addEventListener('mouseleave', () => { mI = false })
 
