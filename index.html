@@ -556,7 +556,7 @@ function initBubbles(canvas, fillColor) {
 
   // Mouse interaction
   const mouse = Mouse.create(render.canvas)
-  mouse.pixelRatio = dpr
+  const bodyZoom = parseFloat(getComputedStyle(document.body).zoom) || 1; mouse.pixelRatio = dpr * bodyZoom
   Composite.add(engine.world, MouseConstraint.create(engine, { mouse, constraint: { stiffness: 0.2 } }))
   render.mouse = mouse
 
