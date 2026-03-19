@@ -410,6 +410,13 @@ nav { position: fixed; top: 0; left: 0; width: 100%; display: flex; align-items:
 
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/matter-js/0.19.0/matter.min.js"></script>
 <script>
+  
+  if (/Safari/.test(navigator.userAgent) && !/Chrome/.test(navigator.userAgent)) {
+  const s = document.createElement('style');
+  s.textContent = 'body{zoom:1!important}';
+  document.head.appendChild(s);
+}
+
 // ── Per-card background hover ──
 document.querySelectorAll('.card').forEach(c => {
   const hover = getComputedStyle(c).getPropertyValue('--card-hover').trim()
