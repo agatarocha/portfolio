@@ -25,7 +25,12 @@ body {
 }
 .hero, .cards, .about-section { width: 1400px; }
 
-nav { position: fixed; top: 0; left: 0; width: 100%; display: flex; align-items: center; justify-content: space-between; padding: 40px; z-index: 100; }
+nav {
+  position: fixed; top: 0; left: 0; width: 100%;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 40px max(40px, calc((100% - 1040px) / 2)); z-index: 100;
+}
+
 .nav-btn {
   font-family: 'FaktProNormal', system-ui, sans-serif;
   font-size: 18px;
@@ -73,8 +78,9 @@ nav { position: fixed; top: 0; left: 0; width: 100%; display: flex; align-items:
 .card[data-card="design-mgmt"] { --card-bg: #0D1305; --card-accent: #679A35; --card-hover: #141E08; }
 .card[data-card="founding"]    { --card-bg: #0C0018; --card-accent: #9F67B5; --card-hover: #150028; }
 
-.about-section { width: 100%; flex-shrink: 0; }
-.about-headline {
+.about-section { width: 1040px; flex-shrink: 0; }
+
+  .about-headline {
   font-family: 'FaktProBlack', system-ui, sans-serif;
   font-size: 32px;
   line-height: 36px;
